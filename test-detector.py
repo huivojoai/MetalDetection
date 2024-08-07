@@ -27,8 +27,8 @@ def main():
 
         # Load image and get height, width and channels
         for i in range(n):
-            # image_file = f'testing_images/part_{i}.jpg'
-            image_file = f'testing_images/{i+1}.jpg'
+            # image_file = f'test_images/part_{i}.jpg'
+            image_file = f'test_images/{i+1}.jpg'
 
             print('Detecting objects in', image_file)
             image = Image.open(image_file)
