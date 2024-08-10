@@ -69,7 +69,6 @@ pydantic==2.8.2
 pydantic_core==2.20.1
 pydeck==0.9.1
 pygments==2.18.0
-PyGObject==3.42.1
 PyJWT==2.3.0
 pymacaroons==0.13.0
 PyNaCl==1.5.0
