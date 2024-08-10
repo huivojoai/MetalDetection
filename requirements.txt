@@ -93,7 +93,6 @@ toml==0.10.2
 toolz==0.12.1
 tornado==6.4.1
 typing_extensions==4.12.2
-tzdata==2024.1
 ubuntu-advantage-tools==8001
 ubuntu-drivers-common==0.0.0
 ufw==0.36.1
