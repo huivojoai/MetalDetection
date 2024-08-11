@@ -41,9 +41,7 @@ def main():
                 file_name = image_file.name
                 st.write('Detecting objects in ', file_name)
                 image = Image.open(image_file)
-                h, w, ch = np.array(image).shape
-
-                st.write(f"Image size = ({h}, {w})")          
+                h, w, ch = np.array(image).shape   
 
                 # st.image(image, caption="Uploaded Image", use_column_width=True)
 
@@ -74,7 +72,7 @@ def main():
                         # Add the tag name and probability
                         plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
                 buf = io.BytesIO()
-                plt.savefig(buf, format="png")
+                fig.savefig(buf, format="png")
                 buf.seek(0)
                 st.image(buf, caption="Detected Output", use_column_width=True)
             
