@@ -55,7 +55,7 @@ def main():
 
                 # Display the image with boxes around each detected object
                 draw = ImageDraw.Draw(image)
-                lineWidth = int(w/100)
+                lineWidth = int(w/500)
                 color = 'magenta'
                 for prediction in results.predictions:
                     # Only show objects with a > 50% probability
@@ -71,7 +71,7 @@ def main():
                         # Add the tag name and probability
                         plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), 
                             backgroundcolor=color, 
-                            fontsize=120)
+                            fontsize=1200)
                 st.image(image, caption="Detected Output", use_column_width=True)
             
             # # outputfile = f'res_part_{i}.jpg'
