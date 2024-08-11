@@ -75,7 +75,6 @@ def main():
 
                 # Create a figure for the results
                 fig, ax = plt.subplots(figsize=(64, 64))
-                ax.imshow(image)
                 ax.axis('off')
                 # Display the image with boxes around each detected object
                 draw = ImageDraw.Draw(image)
@@ -94,7 +93,7 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=24)
-                
+                ax.imshow(image)
                 buf = io.BytesIO()
                 fig.savefig(buf, format='png')
                 buf.seek(0)
