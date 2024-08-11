@@ -76,7 +76,8 @@ def main():
                 # buf.seek(0)
                 output_image = Image.open(image)
                 
-                st.image(output_image, caption="Detected Image", use_container_width=True)
+                st.image(image, caption="Detected Image", use_container_width=True)
+                
             
             # # outputfile = f'res_part_{i}.jpg'
             # output_path = "output"
