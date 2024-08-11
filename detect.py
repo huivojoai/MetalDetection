@@ -42,7 +42,7 @@ def main():
                 image = Image.open(image_file)
                 h, w, ch = np.array(image).shape
 
-                st.image(image, caption="Uploaded Image", use_column_width=True)
+                # st.image(image, caption="Uploaded Image", use_column_width=True)
 
                 image_bytes = image_file.getvalue()
                 
