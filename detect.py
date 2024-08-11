@@ -42,8 +42,8 @@ def main():
                 h, w, ch = np.array(image).shape
 
                 # Detect objects in the test image
-                with open(image_file, mode="rb") as image_data:
-                    results = prediction_client.detect_image(project_id, model_name, image_data)
+                # with open(image_file, mode="rb") as image_data:
+                results = prediction_client.detect_image(project_id, model_name, image)
 
                 # Create a figure for the results
                 fig = plt.figure(figsize=(w * 1.1, h * 1.1))
