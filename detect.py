@@ -70,7 +70,7 @@ def main():
                         points = ((left,top), (left+width,top), (left+width,top+height), (left,top+height),(left,top))
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
-                        draw.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
+                        fig = plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
                 st.image(image, caption="Detected Output", use_column_width=True)
                 
             
