@@ -13,9 +13,9 @@ def main():
     try:
         # Get Configuration Settings
         load_dotenv()
-        prediction_endpoint = os.getenv('PredictionEndpoint')
-        prediction_key = os.getenv('PredictionKey')
-        project_id = os.getenv('ProjectID')
+        prediction_endpoint = "https://southcentralus.api.cognitive.microsoft.com/"
+        prediction_key = "7eb6aead93ec47f2917d79e9c0dc0f9f"
+        project_id = "471dbb61-7155-4c98-9cca-e8232090ca9c"
         model_name = "Iter6"
 
         # Authenticate a client for the training API
