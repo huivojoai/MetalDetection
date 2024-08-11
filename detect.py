@@ -16,7 +16,7 @@ def main():
         prediction_endpoint = os.getenv('PredictionEndpoint')
         prediction_key = os.getenv('PredictionKey')
         project_id = os.getenv('ProjectID')
-        model_name = os.getenv('ModelName')
+        model_name = Iter6
 
         # Authenticate a client for the training API
         credentials = ApiKeyCredentials(in_headers={"Prediction-key": prediction_key})
