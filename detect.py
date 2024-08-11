@@ -74,10 +74,9 @@ def main():
                 # st.image(image, caption="Detected Output", use_column_width=True)
 
                 # Create a figure for the results
-                fig = plt.figure(figsize=(w * 1.1, h * 1.1))
+                fig, ax = plt.subplots()
                 
                 plt.axis('off')
-                ax = fig.add_subplot(111)
                 # Display the image with boxes around each detected object
                 draw = ImageDraw.Draw(image)
                 lineWidth = int(w/500)
@@ -95,7 +94,10 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
-                st.image(image, caption="Detected Output", use_column_width=True)
+                buf = BytesIO()
+                fig.savefig(buf, format='png')
+                buf.seek(0)
+                st.image(buf, caption="Detected Output", use_column_width=True)
 
 
             
