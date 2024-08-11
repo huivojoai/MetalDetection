@@ -78,7 +78,7 @@ def main():
             # fig.savefig(os.path.join(output_path, f'res_part_{i}.jpg'))
             # fig.savefig(os.path.join(output_path, f'res_part_{i+1}.jpg'))
 
-            print('Results saved in ', output_path)
+            # print('Results saved in ', output_path)
     except Exception as ex:
         st.write(ex)
 
