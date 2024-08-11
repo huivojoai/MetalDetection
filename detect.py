@@ -23,7 +23,7 @@ def main():
 
         # ========================== Update for each model: 
         n = 1
-        probability_threshold = 10
+        probability_threshold = 6
 
 
         # Load image and get height, width and channels
