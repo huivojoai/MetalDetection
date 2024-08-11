@@ -78,7 +78,7 @@ def main():
                 ax.axis('off')
                 # Display the image with boxes around each detected object
                 draw = ImageDraw.Draw(image)
-                lineWidth = 1
+                lineWidth = 2
                 color = 'magenta'
                 for prediction in results.predictions:
                     # Only show objects with a > 50% probability
@@ -92,7 +92,7 @@ def main():
                         points = ((left,top), (left+width,top), (left+width,top+height), (left,top+height),(left,top))
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
-                        ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=24)
+                        ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=60)
                 ax.imshow(image)
                 buf = io.BytesIO()
                 fig.savefig(buf, format='png')
