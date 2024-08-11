@@ -51,7 +51,7 @@ def main():
                 results = prediction_client.detect_image(project_id, model_name, image_bytes)
 
                 # # Create a figure for the results
-                # fig = plt.figure(figsize=(w * 1.1, h * 1.1))
+                # fig = plt.figure(figsize=(32, 32))
                 # plt.axis('off')
                 # ax = fig.add_subplot(111)
                 # # Display the image with boxes around each detected object
@@ -70,7 +70,7 @@ def main():
                 #         points = ((left,top), (left+width,top), (left+width,top+height), (left,top+height),(left,top))
                 #         draw.line(points, fill=color, width=lineWidth)
                 #         # Add the tag name and probability
-                #         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
+                #         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=12)
                 # st.image(image, caption="Detected Output", use_column_width=True)
 
                 # Create a figure for the results
