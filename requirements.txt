@@ -12,3 +12,9 @@ python-dotenv==1.0.1
 referencing==0.35.1
 reportlab==3.6.12
 streamlit==1.37.1
+libfreetype6-dev
+libjpeg-dev
+zlib1g-dev
+libtiff-dev
+liblcms2-dev
+libwebp-dev
