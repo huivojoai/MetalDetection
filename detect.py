@@ -74,7 +74,7 @@ def main():
                 # st.image(image, caption="Detected Output", use_column_width=True)
 
                 # Create a figure for the results
-                fig, ax = plt.subplots()
+                fig, ax = plt.subplots(figsize=(w * 1.1, h * 1.1))
                 ax.imshow(image)
                 ax.axis('off')
                 # Display the image with boxes around each detected object
