@@ -94,7 +94,7 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
-                buf = BytesIO()
+                buf = io.BytesIO()
                 fig.savefig(buf, format='png')
                 buf.seek(0)
                 st.image(buf, caption="Detected Output", use_column_width=True)
