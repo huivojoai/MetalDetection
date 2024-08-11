@@ -72,7 +72,12 @@ def main():
                         # Add the tag name and probability
                         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
                 # st.image(image, caption="Detected Output", use_column_width=True)
-                st.pyplot(fig)
+                buf = io.BytesIO()
+                fig.savefig(buf, format='png')
+                buf.seek(0)
+                img = Image.open(buf)
+                st.image(img, caption="Detected Output", use_column_width=True)
+                # st.pyplot(fig)
                 
             
             # # outputfile = f'res_part_{i}.jpg'
