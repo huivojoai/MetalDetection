@@ -75,8 +75,8 @@ def main():
 
                 # Create a figure for the results
                 fig, ax = plt.subplots()
-                
-                plt.axis('off')
+                img = plt.imread(image)
+                ax.axis('off')
                 # Display the image with boxes around each detected object
                 draw = ImageDraw.Draw(image)
                 lineWidth = int(w/500)
