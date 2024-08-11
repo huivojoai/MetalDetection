@@ -74,7 +74,7 @@ def main():
                 buf = io.BytesIO()
                 fig.savefig(buf, format="png")
                 buf.seek(0)
-                st.image(buf, caption="Detected Output", use_column_width=True)
+                st.pyplot(buf, caption="Detected Output", use_column_width=True)
             
             # # outputfile = f'res_part_{i}.jpg'
             # output_path = "output"
