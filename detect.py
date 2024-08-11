@@ -36,14 +36,15 @@ def main():
             image_file = st.file_uploader("Choose an image...", type="jpg")
 
             if image_file is not None:
-                
-                st.write('Detecting objects in', image_file)
+
+                file_name = image_file.name
+                st.write('Detecting objects in ', file_name)
                 image = Image.open(image_file)
                 h, w, ch = np.array(image).shape
 
                 # Detect objects in the test image
-                # with open(image_file, mode="rb") as image_data:
-                results = prediction_client.detect_image(project_id, model_name, image)
+                with open(image_file, mode="rb") as image_data:
+                    results = prediction_client.detect_image(project_id, model_name, image_data)
 
                 # Create a figure for the results
                 fig = plt.figure(figsize=(w * 1.1, h * 1.1))
