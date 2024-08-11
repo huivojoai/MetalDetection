@@ -6,6 +6,8 @@ import streamlit as st
 import numpy as np
 import os
 import io
+matplotlib.use('Agg')
+
 
 def main():
     from dotenv import load_dotenv
