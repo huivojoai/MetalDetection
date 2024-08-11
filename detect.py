@@ -71,10 +71,11 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
-                # buf = io.BytesIO()
-                # fig.savefig(buf, format="png")
-                # buf.seek(0)
-                st.image(fig, use_container_width=True)
+                buf = io.BytesIO()
+                fig.savefig(buf, format="png")
+                buf.seek(0)
+                output_image = Image.open(buf)
+                st.image(output_image, caption="Detected Image", use_container_width=True)
             
             # # outputfile = f'res_part_{i}.jpg'
             # output_path = "output"
