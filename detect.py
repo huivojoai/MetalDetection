@@ -74,7 +74,8 @@ def main():
                 # buf = io.BytesIO()
                 # fig.savefig(buf)
                 # buf.seek(0)
-                output_image = Image.open(buf)
+                output_image = Image.open(image)
+                
                 st.image(output_image, caption="Detected Image", use_container_width=True)
             
             # # outputfile = f'res_part_{i}.jpg'
