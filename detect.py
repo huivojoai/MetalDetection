@@ -51,7 +51,7 @@ def main():
                 results = prediction_client.detect_image(project_id, model_name, image_bytes)
 
                 # # Create a figure for the results
-                # fig = plt.figure(figsize=(32, 32))
+                # fig = plt.figure(figsize=(w * 1.1, h * 1.1))
                 # plt.axis('off')
                 # ax = fig.add_subplot(111)
                 # # Display the image with boxes around each detected object
@@ -74,7 +74,7 @@ def main():
                 # st.image(image, caption="Detected Output", use_column_width=True)
 
                 # Create a figure for the results
-                fig, ax = plt.subplots(figsize=(w * 1.1, h * 1.1))
+                fig, ax = plt.subplots(figsize=(32, 32))
                 ax.imshow(image)
                 ax.axis('off')
                 # Display the image with boxes around each detected object
