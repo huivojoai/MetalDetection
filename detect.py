@@ -43,6 +43,9 @@ def main():
                 h, w, ch = np.array(image).shape
 
                 st.image(image, caption="Uploaded Image.", use_column_width=True)
+
+                file_bytes = image_file.getvalue()
+                st.write(file_bytes)
                 
                 with open(image_bytes, mode="rb") as image_data:
                     results = prediction_client.detect_image(project_id, model_name, image_data)
