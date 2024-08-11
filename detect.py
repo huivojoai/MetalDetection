@@ -5,6 +5,7 @@ from PIL import Image, ImageDraw, ImageFont
 import streamlit as st
 import numpy as np
 import os
+import io
 
 def main():
     from dotenv import load_dotenv
@@ -72,7 +73,10 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
-                st.image(image, caption="Detected Output", use_column_width=True)
+                buf = io.BytesIO()
+                plt.savefig(buf, format"png")
+                buf.seek(0
+                st.image(buf, caption="Detected Output", use_column_width=True)
             
             # # outputfile = f'res_part_{i}.jpg'
             # output_path = "output"
