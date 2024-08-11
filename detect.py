@@ -71,7 +71,8 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
-                st.image(image, caption="Detected Output", use_column_width=True)
+                # st.image(image, caption="Detected Output", use_column_width=True)
+                st.pyplot(fig)
                 
             
             # # outputfile = f'res_part_{i}.jpg'
