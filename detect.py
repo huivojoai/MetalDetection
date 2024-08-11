@@ -31,7 +31,7 @@ def main():
             # image_file = f'testing_images/part_{i}.jpg'
             # image_file = f'testing_images/{i+1}.jpg'
             
-            st.title("custom Vision Metal Condition Detection")
+            st.title("Metal Condition Detection")
 
             image_file = st.file_uploader("Choose an image...", type="jpg")
 
@@ -42,8 +42,8 @@ def main():
                 image = Image.open(image_file)
                 h, w, ch = np.array(image).shape
 
-                image_bytes = image_file.getvalue()
-                # Detect objects in the test image
+                st.image(image, caption="Uploaded Image.", use_column_width=True)
+                
                 with open(image_bytes, mode="rb") as image_data:
                     results = prediction_client.detect_image(project_id, model_name, image_data)
 
