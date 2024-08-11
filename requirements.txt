@@ -63,7 +63,6 @@ pexpect==4.8.0
 Pillow==9.0.1
 ptyprocess==0.7.0
 pyarrow==17.0.0
-pycups==2.0.1
 pydantic==2.8.2
 pydantic_core==2.20.1
 pydeck==0.9.1
