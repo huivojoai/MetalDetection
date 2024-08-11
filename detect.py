@@ -42,7 +42,7 @@ def main():
                 image = Image.open(image_file)
                 h, w, ch = np.array(image).shape
 
-                st.image(image, caption="Uploaded Image.", use_column_width=True)
+                st.image(image, caption="Uploaded Image", use_column_width=True)
 
                 image_bytes = image_file.getvalue()
                 
@@ -72,7 +72,7 @@ def main():
                         plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), 
                             backgroundcolor=color, 
                             fontsize=12)
-                st.imshow(image, caption="Detected Output", use_column_width=True)
+                st.image(image, caption="Detected Output", use_column_width=True)
             
             # # outputfile = f'res_part_{i}.jpg'
             # output_path = "output"
