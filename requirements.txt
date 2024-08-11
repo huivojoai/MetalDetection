@@ -1,9 +1,13 @@
+matplotlib
+streamlit
+extra-streamlit-components
+deep-translator
+gtts
 azure-cognitiveservices-vision-customvision==3.1.0
 azure-common==1.1.28
 azure-core==1.30.2
 certifi==2020.6.20
 importlib-metadata==4.6.4
-matplotlib==3.9.1
 msrest==0.7.1
 numpy==2.0.0
 pandas==2.2.2
@@ -11,7 +15,6 @@ Pillow
 python-dotenv==1.0.1
 referencing==0.35.1
 reportlab==3.6.12
-streamlit==1.37.1
 libfreetype6-dev
 libjpeg-dev
 zlib1g-dev
