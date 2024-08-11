@@ -74,7 +74,7 @@ def main():
                         # Add the tag name and probability
                         plt.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
                 buf = io.BytesIO()
-                plt.savefig(buf, format"png")
+                plt.savefig(buf, format="png")
                 buf.seek(0
                 st.image(buf, caption="Detected Output", use_column_width=True)
             
