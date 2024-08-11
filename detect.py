@@ -6,8 +6,6 @@ import streamlit as st
 import numpy as np
 import os
 import io
-matplotlib.use('Agg')
-
 
 def main():
     from dotenv import load_dotenv
@@ -52,8 +50,31 @@ def main():
                 # with open(file_bytes, mode="rb") as image_data:
                 results = prediction_client.detect_image(project_id, model_name, image_bytes)
 
+                # # Create a figure for the results
+                # fig = plt.figure(figsize=(w * 1.1, h * 1.1))
+                # plt.axis('off')
+                # ax = fig.add_subplot(111)
+                # # Display the image with boxes around each detected object
+                # draw = ImageDraw.Draw(image)
+                # lineWidth = int(w/500)
+                # color = 'magenta'
+                # for prediction in results.predictions:
+                #     # Only show objects with a > 50% probability
+                #     if (prediction.probability*100) > probability_threshold:
+                #         # Box coordinates and dimensions are proportional - convert to absolutes
+                #         left = prediction.bounding_box.left * w 
+                #         top = prediction.bounding_box.top * h 
+                #         height = prediction.bounding_box.height * h
+                #         width =  prediction.bounding_box.width * w
+                #         # Draw the box
+                #         points = ((left,top), (left+width,top), (left+width,top+height), (left,top+height),(left,top))
+                #         draw.line(points, fill=color, width=lineWidth)
+                #         # Add the tag name and probability
+                #         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
+                # st.image(image, caption="Detected Output", use_column_width=True)
+
                 # Create a figure for the results
-                fig = plt.figure(figsize=(w * 1.1, h * 1.1))
+                fig, ax = plt.figure(figsize=(w * 1.1, h * 1.1))
                 plt.axis('off')
                 ax = fig.add_subplot(111)
                 # Display the image with boxes around each detected object
@@ -73,14 +94,9 @@ def main():
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
                         ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
-                # st.image(image, caption="Detected Output", use_column_width=True)
-                buf = io.BytesIO()
-                fig.savefig(buf, format='png')
-                buf.seek(0)
-                img = Image.open(buf)
-                st.image(img, caption="Detected Output", use_column_width=True)
-                # st.pyplot(fig)
-                
+                st.image(image, caption="Detected Output", use_column_width=True)
+
+
             
             # # outputfile = f'res_part_{i}.jpg'
             # output_path = "output"
