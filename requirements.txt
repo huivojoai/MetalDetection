@@ -61,7 +61,6 @@ pandas==2.2.2
 paramiko==2.9.3
 pexpect==4.8.0
 Pillow==9.0.1
-protobuf==5.27.3
 ptyprocess==0.7.0
 pyarrow==17.0.0
 pycups==2.0.1
