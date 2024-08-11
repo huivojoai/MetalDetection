@@ -42,8 +42,7 @@ def main():
                 image = Image.open(image_file)
                 h, w, ch = np.array(image).shape
 
-                st.write("Image size = ({h}, {w})")
-            
+                st.write(f"Image size = ({h}, {w})")          
 
                 # st.image(image, caption="Uploaded Image", use_column_width=True)
 
