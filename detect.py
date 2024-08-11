@@ -74,12 +74,12 @@ def main():
                 # st.image(image, caption="Detected Output", use_column_width=True)
 
                 # Create a figure for the results
-                fig, ax = plt.subplots(figsize=(32, 32))
+                fig, ax = plt.subplots(figsize=(w, h))
                 ax.imshow(image)
                 ax.axis('off')
                 # Display the image with boxes around each detected object
                 draw = ImageDraw.Draw(image)
-                lineWidth = int(w/500)
+                lineWidth = 1
                 color = 'magenta'
                 for prediction in results.predictions:
                     # Only show objects with a > 50% probability
@@ -93,7 +93,8 @@ def main():
                         points = ((left,top), (left+width,top), (left+width,top+height), (left,top+height),(left,top))
                         draw.line(points, fill=color, width=lineWidth)
                         # Add the tag name and probability
-                        ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=324)
+                        ax.annotate(prediction.tag_name + ": {0:.2f}%".format(prediction.probability * 100),(left,top), backgroundcolor=color, fontsize=24)
+                
                 buf = io.BytesIO()
                 fig.savefig(buf, format='png')
                 buf.seek(0)
